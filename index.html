@@ -1,1 +1,408 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071018">
+  <meta name="description" content="Website pribadi Sudirman — perjalanan hidup, karya, teknologi, dan rencana masa depan.">
+  <title>Sudirman — Digital Life Archive</title>
+
+  <style>
+    :root {
+      --bg: #071018;
+      --panel: #101d28;
+      --text: #edf3f5;
+      --muted: #9aabb7;
+      --gold: #d9b878;
+      --line: rgba(255,255,255,.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7,16,24,.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      line-height: 1.05;
+      letter-spacing: -4px;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 19px;
+      border: 1px solid var(--gold);
+      border-radius: 7px;
+      color: var(--gold);
+      font-weight: 650;
+    }
+
+    .button.primary {
+      background: var(--gold);
+      color: #071018;
+    }
+
+    section {
+      padding: 65px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .75rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 23px;
+      min-width: 0;
+    }
+
+    .card .number {
+      color: var(--gold);
+      font-size: .8rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .now {
+      border-left: 3px solid var(--gold);
+      padding: 8px 0 8px 22px;
+      max-width: 720px;
+    }
+
+    .now p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        gap: 12px;
+        font-size: .8rem;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+        gap: 8px;
+      }
+
+      .hero {
+        min-height: 68vh;
+        padding: 65px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">SUDIRMAN<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#journey">Perjalanan</a>
+        <a href="#projects">Proyek</a>
+        <a href="#now">Sekarang</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero" id="home" style="border-top:0">
+        <div class="eyebrow">Personal Website · Digital Life Archive</div>
+        <h1>Built by<br><span>Experience.</span></h1>
+        <p>
+          Sebuah ruang untuk mendokumentasikan perjalanan hidup,
+          mengeksplorasi teknologi, membangun karya, dan merancang
+          masa depan dengan arah yang lebih jelas.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href="#about">Kenali Saya</a>
+          <a class="button" href="#projects">Lihat Proyek</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-label">01 / Tentang Saya</div>
+        <h2>Belajar. Membangun. Bertumbuh.</h2>
+        <p class="intro">
+          Saya adalah seseorang yang tertarik pada teknologi,
+          sistem digital, usaha mandiri, dan cara mengubah ide
+          menjadi sesuatu yang benar-benar berguna.
+          Website ini menjadi catatan perjalanan dan ruang untuk
+          membangun hal-hal baru.
+        </p>
+      </section>
+
+      <section id="journey">
+        <div class="section-label">02 / Perjalanan</div>
+        <h2>Setiap fase punya pelajaran.</h2>
+        <p class="intro">
+          Perjalanan tidak selalu lurus. Setiap pengalaman
+          memberikan pelajaran yang bisa dibawa ke langkah berikutnya.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="number">1990 — AWAL</div>
+            <h3>Akar di Aceh</h3>
+            <p>
+              Berawal dari Aceh, dengan pengalaman hidup yang
+              membentuk cara pandang dan nilai-nilai pribadi.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">2013 — 2021</div>
+            <h3>Teknik & Teknologi</h3>
+            <p>
+              Pengalaman di bidang kelistrikan, komputer,
+              jaringan, dan pemecahan masalah teknis.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">2017 — 2026</div>
+            <h3>Membangun Usaha</h3>
+            <p>
+              Mengembangkan Sudirman.Net, belajar tentang pelanggan,
+              operasional, risiko, dan kemandirian usaha.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-label">03 / Proyek</div>
+        <h2>Ide yang ingin diwujudkan.</h2>
+        <p class="intro">
+          Ruang untuk mencatat proyek yang sedang dibangun,
+          eksperimen, dan gagasan yang layak dikembangkan.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="number">PROJECT 01</div>
+            <h3>Sudirman.Net</h3>
+            <p>
+              Arsip pengalaman membangun layanan jaringan internet
+              dan pelajaran dari perjalanan usaha.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">PROJECT 02</div>
+            <h3>AI Companion</h3>
+            <p>
+              Eksplorasi asisten AI pribadi yang membantu
+              mengelola informasi, rencana, dan pekerjaan.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">PROJECT 03</div>
+            <h3>Digital Life Archive</h3>
+            <p>
+              Membangun pusat dokumentasi digital yang terus
+              berkembang seiring perjalanan hidup dan karya.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="now">
+        <div class="section-label">04 / Sekarang & Masa Depan</div>
+        <h2>Fokus pada langkah berikutnya.</h2>
+
+        <div class="now">
+          <h3>Membangun fondasi baru</h3>
+          <p>
+            Fokus saat ini adalah mengembangkan kemampuan,
+            memperbaiki fondasi finansial, membangun aset,
+            dan menciptakan usaha yang lebih berkelanjutan.
+          </p>
+          <p>
+            Visi jangka panjang: hidup lebih mandiri,
+            dekat dengan keluarga, dan memiliki kebebasan
+            untuk memilih arah hidup sendiri.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Sudirman</span>
+      <span>Built with purpose, one step at a time.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+          </html>w
