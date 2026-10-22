@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b10">
+  <meta name="description" content="Galeri proyek Sudirman: teknologi, AI, otomasi, usaha, dan eksperimen digital.">
+  <title>Proyek — Sudirman</title>
+  <style>
+    :root{--bg:#080b10;--surface:#10151d;--gold:#d9b878;--gold-light:#f2d9a0;--white:#f4f0e8;--muted:#9da5b1;--line:rgba(217,184,120,.19)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{background:var(--bg);color:var(--white);font-family:system-ui,-apple-system,sans-serif;line-height:1.8;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1100px,88%);margin:auto}
+    .topline{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,11,16,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:850;letter-spacing:3px;white-space:nowrap}.brand span,.gold{color:var(--gold)}
+    .nav-right{display:flex;align-items:center;gap:22px}.nav-links{display:flex;gap:18px;color:var(--muted);font-size:.84rem;flex-wrap:wrap}
+    .nav-links a:hover{color:var(--gold)}
+    .lang-toggle{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 11px;border-radius:3px;font:inherit;font-size:.76rem;cursor:pointer}
+    .lang-toggle:hover{border-color:var(--gold);color:var(--white)}
+    .hero{padding:95px 0 78px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:600px;height:450px;right:-160px;top:-100px;background:radial-gradient(ellipse,rgba(174,127,57,.16),transparent 68%);pointer-events:none}
+    .kicker{color:var(--gold);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+    h1{font-size:clamp(3.2rem,9vw,6.8rem);line-height:1.02;letter-spacing:-.065em;margin:24px 0;position:relative;z-index:1}
+    h1 em,h2 em{font-family:Georgia,serif;color:var(--gold);font-weight:400}
+    .intro{max-width:720px;color:var(--muted);font-size:1.05rem;position:relative;z-index:1}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:1}
+    .btn{display:inline-flex;padding:11px 17px;border:1px solid var(--line);border-radius:3px;font-size:.87rem;transition:.2s}
+    .btn.primary{background:var(--gold);color:#101116;border-color:var(--gold);font-weight:750}.btn:hover{transform:translateY(-2px)}
+    main section{padding:66px 0;border-bottom:1px solid var(--line)}
+    .section-no{font-size:.72rem;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
+    h2{font-size:clamp(2rem,5vw,3.2rem);line-height:1.16;letter-spacing:-.045em}
+    .lead{color:var(--muted);max-width:720px;margin-top:15px}
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin:28px 0 24px}
+    .filter{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 13px;border-radius:3px;font:inherit;font-size:.8rem;cursor:pointer}
+    .filter[aria-pressed="true"],.filter:hover{border-color:var(--gold);color:var(--gold)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{display:flex;flex-direction:column;min-height:290px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));border:1px solid var(--line);padding:25px;transition:border-color .25s,transform .25s}
+    .card:hover{border-color:rgba(217,184,120,.55);transform:translateY(-3px)}
+    .num{font-size:.7rem;color:var(--gold);letter-spacing:1.8px;margin-bottom:23px}
+    h3{font-size:1.2rem;margin-bottom:10px}.card p{font-size:.9rem;color:var(--muted)}
+    .meta{margin-top:auto;padding-top:24px;color:var(--gold);font-size:.76rem}
+    .status{display:inline-block;border:1px solid var(--line);padding:3px 8px;margin-top:13px;color:var(--muted);font-size:.68rem;letter-spacing:.4px;align-self:flex-start}
+    .note{background:radial-gradient(ellipse at 100% 0%,rgba(217,184,120,.09),transparent 55%),var(--surface);border:1px solid var(--line);padding:clamp(24px,5vw,42px)}
+    .note p{color:var(--muted);margin-top:14px;max-width:760px}
+    footer{padding:25px 0;color:#7f8996;font-size:.78rem}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    [hidden]{display:none!important}
+    @media(max-width:800px){nav{align-items:flex-start;flex-direction:column;padding:13px 0;gap:12px}.nav-right{width:100%;justify-content:space-between;gap:10px}.nav-links{gap:13px;font-size:.78rem}.lang-toggle{position:absolute;top:15px;right:6%}.brand{padding-right:80px}.hero{padding:72px 0 60px}main section{padding:52px 0}.grid{grid-template-columns:1fr 1fr;gap:12px}.card{padding:21px;min-height:270px}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}.card{min-height:235px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header><nav class="wrap">
+    <a href="index.html" class="brand">SUDIRMAN<span>.</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" data-key="home">Beranda</a>
+        <a href="about.html" data-key="about">Tentang saya</a>
+        <a href="#gallery" data-key="projects">Proyek</a>
+      </div>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID | EN</button>
+    </div>
+  </nav></header>
+  <main>
+    <div class="hero"><div class="wrap">
+      <div class="kicker" data-key="kicker">GALERI KARYA · 01</div>
+      <h1 data-key="heroTitle">Ide menjadi<br><em>kenyataan.</em></h1>
+      <p class="intro" data-key="intro">Ruang untuk mengumpulkan proyek, eksperimen, dan gagasan yang sedang dikembangkan. Sebagian berangkat dari pengalaman, sebagian lagi adalah langkah menuju hal baru.</p>
+      <div class="actions"><a class="btn primary" href="#gallery" data-key="explore">Jelajahi galeri ↓</a><a class="btn" href="index.html" data-key="homeButton">Kembali ke beranda ↗</a></div>
+    </div></div>
+    <div class="wrap">
+      <section id="gallery">
+        <div class="section-no" data-key="sectionLabel">01 / SEMUA PROYEK</div>
+        <h2 data-key="sectionTitle">Sedang dibangun,<br><em>terus berkembang.</em></h2>
+        <p class="lead" data-key="sectionLead">Galeri ini mencakup pengalaman usaha, proyek digital, eksplorasi AI, dan ide bisnis. Status ditampilkan secara jujur—ide atau konsep tidak dianggap sebagai produk yang sudah selesai.</p>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter" data-filter="all" aria-pressed="true" data-key="filterAll">Semua</button>
+          <button class="filter" data-filter="business" aria-pressed="false" data-key="filterBusiness">Bisnis</button>
+          <button class="filter" data-filter="technology" aria-pressed="false" data-key="filterTech">Teknologi</button>
+          <button class="filter" data-filter="ai" aria-pressed="false" data-key="filterAI">AI & Otomasi</button>
+          <button class="filter" data-filter="ideas" aria-pressed="false" data-key="filterIdeas">Ide & Eksperimen</button>
+        </div>
+        <div class="grid" id="projectGrid">
+          <article class="card" data-category="business technology">
+            <div class="num">PROJECT / 001</div><h3>Sudirman.Net</h3>
+            <p data-key="p1">Arsip pengalaman membangun layanan internet lokal: jaringan, pelanggan, operasional, dan pelajaran dari menjalankan usaha mandiri.</p>
+            <span class="status" data-key="statusArchive">Arsip pengalaman</span><div class="meta">Networking · Business</div>
+          </article>
+          <article class="card" data-category="ai technology">
+            <div class="num">PROJECT / 002</div><h3>AI Companion & Council</h3>
+            <p data-key="p2">Rancangan asisten AI pribadi dan beberapa peran AI untuk membantu merapikan pengetahuan, menimbang pilihan, dan menindaklanjuti rencana.</p>
+            <span class="status" data-key="statusConcept">Konsep / eksplorasi</span><div class="meta">AI · Automation · Personal systems</div>
+          </article>
+          <article class="card" data-category="technology ideas">
+            <div class="num">PROJECT / 003</div><h3>Digital Life Archive</h3>
+            <p data-key="p3">Pusat dokumentasi digital untuk mengumpulkan catatan, karya, pembelajaran, dan perkembangan proyek dari waktu ke waktu.</p>
+            <span class="status" data-key="statusConcept2">Konsep / eksplorasi</span><div class="meta">Digital · Knowledge management</div>
+          </article>
+          <article class="card" data-category="business ideas">
+            <div class="num">PROJECT / 004</div><h3>Self-Service Laundry</h3>
+            <p data-key="p4">Eksplorasi model usaha laundry mandiri, termasuk kebutuhan lokasi, mesin, listrik, alur pelanggan, dan hitungan kelayakan.</p>
+            <span class="status" data-key="statusResearch">Riset awal</span><div class="meta">Business model · Operations</div>
+          </article>
+          <article class="card" data-category="business ideas">
+            <div class="num">PROJECT / 005</div><h3>Food Business Lab</h3>
+            <p data-key="p5">Pengembangan dan pengujian ide usaha makanan, resep sambal, biaya bahan, dan strategi harga berdasarkan kondisi operasional.</p>
+            <span class="status" data-key="statusExplore">Eksplorasi</span><div class="meta">Food · Costing · Business</div>
+          </article>
+          <article class="card" data-category="technology ideas">
+            <div class="num">PROJECT / 006</div><h3>Personal Website</h3>
+            <p data-key="p6">Website pribadi bilingual sebagai rumah digital untuk cerita, pengalaman, karya, dan proyek yang akan bertambah seiring waktu.</p>
+            <span class="status" data-key="statusActive">Aktif dikembangkan</span><div class="meta">Web · HTML · Cloudflare Pages</div>
+          </article>
+        </div>
+      </section>
+      <section>
+        <div class="note">
+          <div class="section-no" data-key="nextLabel">02 / LANGKAH BERIKUTNYA</div>
+          <h2 data-key="nextTitle">Satu proyek pada satu waktu.</h2>
+          <p data-key="nextText">Galeri ini akan diperbarui saat ada perkembangan nyata. Fokusnya bukan terlihat sibuk, tetapi mencatat proses, menguji ide, dan membangun sesuatu yang benar-benar berguna.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Sudirman</span><span data-key="footer">Dibangun dengan tujuan, satu langkah pada satu waktu.</span></div></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const translations = {
+      id: {
+        home:"Beranda",about:"Tentang saya",projects:"Proyek",kicker:"GALERI KARYA · 01",heroTitle:"Ide menjadi<br><em>kenyataan.</em>",
+        intro:"Ruang untuk mengumpulkan proyek, eksperimen, dan gagasan yang sedang dikembangkan. Sebagian berangkat dari pengalaman, sebagian lagi adalah langkah menuju hal baru.",
+        explore:"Jelajahi galeri ↓",homeButton:"Kembali ke beranda ↗",sectionLabel:"01 / SEMUA PROYEK",sectionTitle:"Sedang dibangun,<br><em>terus berkembang.</em>",
+        sectionLead:"Galeri ini mencakup pengalaman usaha, proyek digital, eksplorasi AI, dan ide bisnis. Status ditampilkan secara jujur—ide atau konsep tidak dianggap sebagai produk yang sudah selesai.",
+        filterAll:"Semua",filterBusiness:"Bisnis",filterTech:"Teknologi",filterAI:"AI & Otomasi",filterIdeas:"Ide & Eksperimen",
+        p1:"Arsip pengalaman membangun layanan internet lokal: jaringan, pelanggan, operasional, dan pelajaran dari menjalankan usaha mandiri.",
+        p2:"Rancangan asisten AI pribadi dan beberapa peran AI untuk membantu merapikan pengetahuan, menimbang pilihan, dan menindaklanjuti rencana.",
+        p3:"Pusat dokumentasi digital untuk mengumpulkan catatan, karya, pembelajaran, dan perkembangan proyek dari waktu ke waktu.",
+        p4:"Eksplorasi model usaha laundry mandiri, termasuk kebutuhan lokasi, mesin, listrik, alur pelanggan, dan hitungan kelayakan.",
+        p5:"Pengembangan dan pengujian ide usaha makanan, resep sambal, biaya bahan, dan strategi harga berdasarkan kondisi operasional.",
+        p6:"Website pribadi bilingual sebagai rumah digital untuk cerita, pengalaman, karya, dan proyek yang akan bertambah seiring waktu.",
+        statusArchive:"Arsip pengalaman",statusConcept:"Konsep / eksplorasi",statusConcept2:"Konsep / eksplorasi",statusResearch:"Riset awal",statusExplore:"Eksplorasi",statusActive:"Aktif dikembangkan",
+        nextLabel:"02 / LANGKAH BERIKUTNYA",nextTitle:"Satu proyek pada satu waktu.",nextText:"Galeri ini akan diperbarui saat ada perkembangan nyata. Fokusnya bukan terlihat sibuk, tetapi mencatat proses, menguji ide, dan membangun sesuatu yang benar-benar berguna.",
+        footer:"Dibangun dengan tujuan, satu langkah pada satu waktu."
+      },
+      en: {
+        home:"Home",about:"About Me",projects:"Projects",kicker:"PROJECT GALLERY · 01",heroTitle:"Turning ideas into<br><em>reality.</em>",
+        intro:"A space for projects, experiments, and ideas in development. Some grow from hands-on experience; others are steps toward something new.",
+        explore:"Explore the gallery ↓",homeButton:"Back to home ↗",sectionLabel:"01 / ALL PROJECTS",sectionTitle:"In progress,<br><em>always evolving.</em>",
+        sectionLead:"This gallery brings together business experience, digital projects, AI exploration, and business ideas. Status labels are honest—concepts are not presented as finished products.",
+        filterAll:"All",filterBusiness:"Business",filterTech:"Technology",filterAI:"AI & Automation",filterIdeas:"Ideas & Experiments",
+        p1:"A record of building a local internet service: networking, customers, operations, and lessons from running an independent venture.",
+        p2:"A personal AI assistant and multi-role AI council concept to organize knowledge, weigh options, and follow through on plans.",
+        p3:"A digital hub for collecting notes, work, learning, and project progress over time.",
+        p4:"Exploring a self-service laundry model, including location, machines, electricity, customer flow, and feasibility calculations.",
+        p5:"Developing and testing food-business ideas, sambal recipes, ingredient costs, and pricing strategies grounded in operations.",
+        p6:"A bilingual personal website as a digital home for stories, experience, work, and projects that will grow over time.",
+        statusArchive:"Experience archive",statusConcept:"Concept / exploration",statusConcept2:"Concept / exploration",statusResearch:"Early research",statusExplore:"Exploration",statusActive:"Actively developing",
+        nextLabel:"02 / WHAT’S NEXT",nextTitle:"One project at a time.",nextText:"This gallery will be updated as real progress happens. The goal is not to look busy, but to document the process, test ideas, and build things that are genuinely useful.",
+        footer:"Built with purpose, one step at a time."
+      }
+    };
+    function setLanguage(lang) {
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const value = translations[lang][el.dataset.key];
+        if (value) el.innerHTML = value;
+      });
+      document.documentElement.lang = lang;
+      document.getElementById("langToggle").innerHTML = lang === "id" ? "<strong>ID</strong> | EN" : "ID | <strong>EN</strong>";
+      try { localStorage.setItem("sudirman-language", lang); } catch(e) {}
+    }
+    document.getElementById("langToggle").addEventListener("click", () => setLanguage(document.documentElement.lang === "id" ? "en" : "id"));
+    document.querySelectorAll("[data-filter]").forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll("[data-filter]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+        document.querySelectorAll("#projectGrid .card").forEach(card => {
+          card.hidden = filter !== "all" && !card.dataset.category.split(" ").includes(filter);
+        });
+      });
+    });
+    let initialLanguage = "id";
+    try { if (localStorage.getItem("sudirman-language") === "en") initialLanguage = "en"; } catch(e) {}
+    setLanguage(initialLanguage);
+  </script>
+</body>
+</html>
