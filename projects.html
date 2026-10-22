@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
   <meta name="theme-color" content="#080b10">
   <meta name="description" content="Galeri proyek Sudirman: teknologi, AI, otomasi, usaha, dan eksperimen digital.">
   <title>Proyek — Sudirman</title>
@@ -140,6 +141,43 @@
     :root[data-theme="light"] .nav-links{background:rgba(255,255,255,.98);box-shadow:0 18px 45px rgba(30,25,15,.12)}
     :root[data-theme="light"] .vision,
     :root[data-theme="light"] .note{background:radial-gradient(ellipse at 100% 0%,rgba(217,184,120,.13),transparent 55%),var(--surface)}
+
+  
+  /* Font Awesome icon system */
+  .fa, .fa-solid, .fa-brands { line-height: 1; }
+  .nav-links a::before, .links a::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold);
+    display: inline-block; width: 1.35em; margin-right: .25em; font-size: .9em;
+  }
+  .links a[href="#homeAboutLink"]::before { content: "\f007"; }
+  .links a[href="#about"]::before, .nav-links a[href="index.html"]::before { content: "\f015"; }
+  .links a[href*="about.html"]::before, .nav-links a[href*="about.html"]::before { content: "\f2bd"; }
+  .links a[href="#journey"]::before { content: "\f5da"; }
+  .links a[href="#projects"]::before, .nav-links a[href*="projects.html"]::before { content: "\f0b1"; }
+  .links a[href="#now"]::before { content: "\f0e7"; }
+  .links a[href="#contact"]::before { content: "\f0e0"; }
+  .hero-actions .btn::after { font-family: "Font Awesome 6 Free"; font-weight: 900; margin-left: .35em; }
+  .hero-actions .btn.gold::after { content: "\f061"; }
+  .hero-actions .btn:not(.gold)::after { content: "\f0c1"; }
+  .index::before, .section-no::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold);
+    margin-right: .65em; opacity: .9;
+  }
+  #about .index::before, .section-no[data-key="sectionLabel"]::before { content: "\f007"; }
+  #journey .index::before { content: "\f5da"; }
+  #projects .index::before { content: "\f0b1"; }
+  #now .index::before { content: "\f0e7"; }
+  #contact .index::before { content: "\f0e0"; }
+  .card .card-num::before, .project-card .num::before {
+    font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: .6em; color: var(--gold);
+  }
+  .card:nth-child(1) .card-num::before { content: "\f1b3"; }
+  .card:nth-child(2) .card-num::before { content: "\f121"; }
+  .card:nth-child(3) .card-num::before { content: "\f0ac"; }
+  .contact-action::after { content: "\f08e"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-left: .45em; font-size: .85em; }
+  .tag::before { content: "\f02b"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: .5em; }
+  .meta::before { content: "\f02d"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold); margin-right: .5em; }
+  .status::before { content: "\f111"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold); margin-right: .55em; font-size: .65em; vertical-align: middle; }
 
   </style>
 </head>
