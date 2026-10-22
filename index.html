@@ -184,6 +184,18 @@
 
     .hero-profile-caption { display: none; }
 
+    /* Available-for-work section */
+    .work-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:30px; }
+    .work-card { padding:25px 23px; border:1px solid var(--line); background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.008)); border-radius:5px; }
+    .work-icon { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border:1px solid var(--line); border-radius:4px; color:var(--gold); font-size:1.05rem; margin-bottom:17px; }
+    .work-card h3 { font-size:1.08rem; margin-bottom:9px; }
+    .work-card p { color:var(--muted); font-size:.9rem; line-height:1.75; }
+    .work-cta { display:flex; align-items:center; justify-content:space-between; gap:22px; margin-top:18px; padding:24px; border:1px solid var(--line); background:rgba(217,184,120,.045); border-radius:5px; }
+    .work-cta p { color:var(--muted); font-size:.9rem; margin-top:9px; }
+    .work-status { display:inline-flex; align-items:center; gap:9px; color:var(--gold-light); font-size:.8rem; letter-spacing:.04em; }
+    .status-dot { width:7px; height:7px; display:inline-block; border-radius:50%; background:#8bbf91; box-shadow:0 0 10px rgba(139,191,145,.45); }
+    @media (max-width:760px) { .work-grid { grid-template-columns:1fr; } .work-card { padding:21px; } .work-cta { align-items:flex-start; flex-direction:column; padding:20px; } .work-cta .btn { width:100%; } }
+
     .hero-copy {
       max-width: 590px;
       color: var(--muted);
@@ -592,6 +604,7 @@
         <a href="#projects" id="homeProjectsLink">Projects</a>
         <a href="projects.html" id="projectGalleryLink">Galeri proyek</a>
         <a href="#now" id="nowLink">Now</a>
+        <a href="#work" id="workNavLink">Jasa saya</a>
         <a href="#contact" id="contactNavLink">Kontak</a>
       </div>
     </nav>
@@ -764,6 +777,40 @@
       </section>
 
 
+      <section class="content-section" id="work">
+        <div class="section-top">
+          <div>
+            <div class="index">05 / AVAILABLE FOR WORK</div>
+            <h2 id="workHeading">Practical skills.<br><em>Real-world solutions.</em></h2>
+            <p class="lead" id="workLead">Saya terbuka untuk pekerjaan jarak jauh, proyek freelance, dan kolaborasi teknis yang sesuai dengan pengalaman saya.</p>
+          </div>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="work-icon" aria-hidden="true"><i class="fa-solid fa-network-wired"></i></span>
+            <h3 id="workSkill1">Jaringan & IT</h3>
+            <p id="workDesc1">Troubleshooting jaringan, router, konektivitas internet, komputer, dan dukungan teknis dasar.</p>
+          </article>
+          <article class="work-card">
+            <span class="work-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+            <h3 id="workSkill2">Teknis & Kelistrikan</h3>
+            <p id="workDesc2">Pekerjaan teknis, pemeriksaan masalah, dan pemecahan masalah secara praktis sesuai lingkup keahlian.</p>
+          </article>
+          <article class="work-card">
+            <span class="work-icon" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></span>
+            <h3 id="workSkill3">Dukungan Digital & AI</h3>
+            <p id="workDesc3">Riset online, pengelolaan konten digital, eksperimen AI, dan otomasi sederhana yang terus saya kembangkan.</p>
+          </article>
+        </div>
+        <div class="work-cta">
+          <div>
+            <span class="work-status"><span class="status-dot"></span><span id="workStatus">Terbuka untuk peluang yang sesuai</span></span>
+            <p id="workCTAtext">Punya kebutuhan atau ide proyek? Mari diskusikan ruang lingkup dan hasil yang diharapkan.</p>
+          </div>
+          <a class="btn gold" href="https://wa.me/6282276663818?text=Halo%20Sudirman%2C%20saya%20ingin%20mendiskusikan%20peluang%20kerja%20atau%20proyek." target="_blank" rel="noopener noreferrer" id="workCTAbutton">Diskusikan proyek ↗</a>
+        </div>
+      </section>
+
       <section class="content-section" id="contact">
         <div class="section-top">
           <div>
@@ -848,7 +895,7 @@
     const copy = {
       id: [
         ["#homeAboutLink","Tentang"],["#journeyLink","Perjalanan"],["#homeProjectsLink","Proyek"],["#nowLink","Saat ini"],
-        ["#aboutPageLink","Tentang saya"],["#projectGalleryLink","Galeri proyek"],["#contactNavLink","Kontak"],
+        ["#aboutPageLink","Tentang saya"],["#projectGalleryLink","Galeri proyek"],["#workNavLink","Jasa saya"],["#contactNavLink","Kontak"],
         [".hero .kicker","Arsip pribadi · Sejak 1990"],[".hero-copy",'Bukan sekadar tentang siapa saya hari ini, tetapi tentang perjalanan, pelajaran, dan <strong>apa yang sedang saya bangun untuk masa depan.</strong>'],
         ['.hero-actions .btn.gold',"Jelajahi kisah saya ↗"],['.hero-actions .btn:not(.gold)',"Lihat proyek"],
         [".hero-foot span:nth-child(2)","Sebuah perjalanan yang terus berjalan — 01 / 04"],
@@ -869,11 +916,11 @@
         ['#now .now-panel p:nth-of-type(1)',"Fokus saya adalah membangun fondasi baru: meningkatkan kemampuan, memperkuat kondisi finansial, mengembangkan aset, dan menciptakan usaha yang lebih berkelanjutan."],
         ['#now .now-panel p:nth-of-type(2)',"Visi jangka panjangnya sederhana: hidup lebih mandiri, dekat dengan keluarga, terus belajar, dan memiliki kebebasan untuk memilih arah hidup."],
         ['.closing .kicker',"Terus bertumbuh"],['.closing h2','Kisah ini belum selesai.<br><em>Kisah ini sedang dibangun.</em>'],
-        ['.closing p',"Satu langkah, satu karya, satu hari pada satu waktu."],['#contactHeading','Mari membangun<br><em>sesuatu yang berarti.</em>'],['#contactLead',"Untuk kolaborasi, peluang kerja, proyek teknologi, atau sekadar bertukar ide, silakan hubungi saya melalui kanal berikut."],['#contactWhatsAppAction',"Mulai percakapan ↗"],['#contactEmailAction',"Kirim email ↗"],['#contactGitHubAction',"Lihat proyek dan kode ↗"],['#contactNote',"Media sosial lainnya akan ditambahkan setelah tautan akun dikonfirmasi."],['footer .footer-row span:nth-child(2)',"Arsip pribadi · Dibangun dengan tujuan."]
+        ['.closing p',"Satu langkah, satu karya, satu hari pada satu waktu."],['#workHeading','Keahlian praktis.<br><em>Solusi nyata.</em>'],['#workLead','Saya terbuka untuk pekerjaan jarak jauh, proyek freelance, dan kolaborasi teknis yang sesuai dengan pengalaman saya.'],['#workSkill1','Jaringan & IT'],['#workDesc1','Troubleshooting jaringan, router, konektivitas internet, komputer, dan dukungan teknis dasar.'],['#workSkill2','Teknis & Kelistrikan'],['#workDesc2','Pekerjaan teknis, pemeriksaan masalah, dan pemecahan masalah secara praktis sesuai lingkup keahlian.'],['#workSkill3','Dukungan Digital & AI'],['#workDesc3','Riset online, pengelolaan konten digital, eksperimen AI, dan otomasi sederhana yang terus saya kembangkan.'],['#workStatus','Terbuka untuk peluang yang sesuai'],['#workCTAtext','Punya kebutuhan atau ide proyek? Mari diskusikan ruang lingkup dan hasil yang diharapkan.'],['#workCTAbutton','Diskusikan proyek ↗'],['#contactHeading','Mari membangun<br><em>sesuatu yang berarti.</em>'],['#contactLead',"Untuk kolaborasi, peluang kerja, proyek teknologi, atau sekadar bertukar ide, silakan hubungi saya melalui kanal berikut."],['#contactWhatsAppAction',"Mulai percakapan ↗"],['#contactEmailAction',"Kirim email ↗"],['#contactGitHubAction',"Lihat proyek dan kode ↗"],['#contactNote',"Media sosial lainnya akan ditambahkan setelah tautan akun dikonfirmasi."],['footer .footer-row span:nth-child(2)',"Arsip pribadi · Dibangun dengan tujuan."]
       ],
       en: [
         ['#homeAboutLink',"About"],['#journeyLink',"Journey"],['#homeProjectsLink',"Projects"],['#nowLink',"Now"],
-        ["#aboutPageLink","About Me"],["#projectGalleryLink","Project Gallery"],["#contactNavLink","Contact"],
+        ["#aboutPageLink","About Me"],["#projectGalleryLink","Project Gallery"],["#workNavLink","Work with me"],["#contactNavLink","Contact"],
         [".hero .kicker","Personal archive · Est. 1990"],[".hero-copy",'More than who I am today, this is about the journey, the lessons, and <strong>what I am building for the future.</strong>'],
         ['.hero-actions .btn.gold',"Explore my story ↗"],['.hero-actions .btn:not(.gold)',"Discover projects"],
         [".hero-foot span:nth-child(2)","A life in progress — 01 / 04"],
@@ -894,7 +941,7 @@
         ['#now .now-panel p:nth-of-type(1)',"My focus is to build a new foundation: improve my skills, strengthen my finances, grow assets, and create a more sustainable business."],
         ['#now .now-panel p:nth-of-type(2)',"The long-term vision is simple: live more independently, stay close to family, keep learning, and have the freedom to choose my own direction."],
         ['.closing .kicker',"Still becoming"],['.closing h2','The story is not finished.<br><em>It’s being built.</em>'],
-        ['.closing p',"One step, one creation, one day at a time."],['#contactHeading','Let’s build<br><em>something meaningful.</em>'],['#contactLead',"For collaborations, work opportunities, technology projects, or simply exchanging ideas, feel free to reach out through the channels below."],['#contactWhatsAppAction',"Start a conversation ↗"],['#contactEmailAction',"Send an email ↗"],['#contactGitHubAction',"Explore projects and code ↗"],['#contactNote',"More social links will be added once the account URLs are confirmed."],['footer .footer-row span:nth-child(2)',"Personal archive · Built with purpose."]
+        ['.closing p',"One step, one creation, one day at a time."],['#workHeading','Practical skills.<br><em>Real-world solutions.</em>'],['#workLead','I’m open to remote work, freelance projects, and technical collaborations that fit my experience.'],['#workSkill1','Networking & IT'],['#workDesc1','Troubleshooting networks, routers, internet connectivity, computers, and basic technical support.'],['#workSkill2','Technical & Electrical'],['#workDesc2','Hands-on technical work, issue assessment, and practical troubleshooting within my scope of expertise.'],['#workSkill3','Digital & AI Support'],['#workDesc3','Online research, digital content support, AI experiments, and simple automation that I’m continuing to develop.'],['#workStatus','Open to suitable opportunities'],['#workCTAtext','Have a need or project idea? Let’s discuss the scope and the outcome you’re looking for.'],['#workCTAbutton','Discuss a project ↗'],['#contactHeading','Let’s build<br><em>something meaningful.</em>'],['#contactLead',"For collaborations, work opportunities, technology projects, or simply exchanging ideas, feel free to reach out through the channels below."],['#contactWhatsAppAction',"Start a conversation ↗"],['#contactEmailAction',"Send an email ↗"],['#contactGitHubAction',"Explore projects and code ↗"],['#contactNote',"More social links will be added once the account URLs are confirmed."],['footer .footer-row span:nth-child(2)',"Personal archive · Built with purpose."]
       ]
     };
     const original = new Map();
