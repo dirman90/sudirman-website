@@ -73,6 +73,8 @@
     }
 
     .links a:hover { color: var(--gold); }
+    .lang-toggle { flex-shrink:0; border:1px solid var(--line); background:transparent; color:var(--muted); padding:8px 11px; border-radius:3px; font:inherit; font-size:.76rem; letter-spacing:.7px; cursor:pointer; }
+    .lang-toggle:hover { border-color:var(--gold); color:var(--white); }
 
     .hero {
       min-height: 83vh;
@@ -350,6 +352,8 @@
       }
 
       .links { gap: 16px; font-size: .77rem; flex-wrap: wrap; }
+      .lang-toggle { position:absolute; top:17px; right:6%; }
+      nav { padding-right:78px; }
 
       .hero {
         min-height: 78vh;
@@ -391,6 +395,7 @@
   <header>
     <nav class="wrap">
       <a href="#home" class="brand">SUDIRMAN<span>.</span></a>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID | EN</button>
       <div class="links">
         <a href="#about">Tentang</a>
         <a href="#journey">Journey</a>
@@ -575,9 +580,77 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const copy = {
+      id: [
+        ["header .links a:nth-child(1)","Tentang"],["header .links a:nth-child(2)","Perjalanan"],["header .links a:nth-child(3)","Proyek"],["header .links a:nth-child(4)","Saat ini"],
+        [".hero .kicker","Arsip pribadi · Sejak 1990"],[".hero-copy",'Bukan sekadar tentang siapa saya hari ini, tetapi tentang perjalanan, pelajaran, dan <strong>apa yang sedang saya bangun untuk masa depan.</strong>'],
+        ['.hero-actions .btn.gold',"Jelajahi kisah saya ↗"],['.hero-actions .btn:not(.gold)',"Lihat proyek"],
+        [".hero-foot span:nth-child(2)","Sebuah perjalanan yang terus berjalan — 01 / 04"],
+        ['#about h2','Dibentuk oleh kehidupan.<br><em>Digerakkan oleh tujuan.</em>'],
+        ['#about .lead',"Saya, Sudirman, tertarik pada teknologi, sistem digital, usaha mandiri, dan ide yang bisa diwujudkan menjadi sesuatu yang bermanfaat."],
+        ['#about .small-note',"Website ini adalah ruang pribadi untuk menyimpan karya, mendokumentasikan perjalanan, dan membuka jalan menuju kemungkinan-kemungkinan baru."],
+        ['#about .quote','“Masa lalu adalah pelajaran. Masa depan adalah sesuatu yang <span>masih bisa kita bangun.</span>”'],
+        ['#journey h2','Setiap bab<br>menyimpan <em>pelajaran.</em>'],
+        ['#journey .lead',"Perjalanan hidup tidak selalu lurus. Setiap fase meninggalkan pengalaman yang membentuk langkah berikutnya."],
+        ['#journey .card:nth-child(1) h3',"Awal perjalanan"],['#journey .card:nth-child(1) p',"Berawal dari Aceh. Sebuah perjalanan yang terus berkembang, dibentuk oleh pengalaman, nilai, dan keinginan untuk maju."],
+        ['#journey .card:nth-child(2) h3',"Belajar dengan praktik"],['#journey .card:nth-child(2) p',"Menekuni pekerjaan teknis di bidang kelistrikan, komputer, dan jaringan. Belajar menyelesaikan masalah melalui kemampuan dan pengalaman langsung."],
+        ['#journey .card:nth-child(3) h3',"Membangun sesuatu"],['#journey .card:nth-child(3) p',"Membangun Sudirman.Net dan mempelajari dunia usaha: operasional, pelanggan, risiko, dan arti kemandirian."],
+        ['#projects h2','Mengubah ide menjadi<br><em>kenyataan.</em>'],['#projects .lead',"Beberapa arah yang ingin dikembangkan melalui teknologi, kreativitas, dan eksperimen berkelanjutan."],
+        ['#projects .card:nth-child(1) p',"Arsip perjalanan usaha jaringan internet dan pelajaran dari membangun layanan sendiri."],
+        ['#projects .card:nth-child(2) p',"Eksplorasi asisten AI pribadi untuk membantu mengelola pengetahuan, ide, rencana, dan pekerjaan sehari-hari."],
+        ['#projects .card:nth-child(3) p',"Membangun pusat dokumentasi digital untuk perjalanan, karya, pembelajaran, dan rencana masa depan."],
+        ['#now h2','Menciptakan babak<br><em>berikutnya yang lebih baik.</em>'],
+        ['#now .now-panel p:nth-of-type(1)',"Fokus saya adalah membangun fondasi baru: meningkatkan kemampuan, memperkuat kondisi finansial, mengembangkan aset, dan menciptakan usaha yang lebih berkelanjutan."],
+        ['#now .now-panel p:nth-of-type(2)',"Visi jangka panjangnya sederhana: hidup lebih mandiri, dekat dengan keluarga, terus belajar, dan memiliki kebebasan untuk memilih arah hidup."],
+        ['.closing .kicker',"Terus bertumbuh"],['.closing h2','Kisah ini belum selesai.<br><em>Kisah ini sedang dibangun.</em>'],
+        ['.closing p',"Satu langkah, satu karya, satu hari pada satu waktu."],['footer .footer-row span:nth-child(2)',"Arsip pribadi · Dibangun dengan tujuan."]
+      ],
+      en: [
+        ['header .links a:nth-child(1)',"About"],['header .links a:nth-child(2)',"Journey"],['header .links a:nth-child(3)',"Projects"],['header .links a:nth-child(4)',"Now"],
+        [".hero .kicker","Personal archive · Est. 1990"],[".hero-copy",'More than who I am today, this is about the journey, the lessons, and <strong>what I am building for the future.</strong>'],
+        ['.hero-actions .btn.gold',"Explore my story ↗"],['.hero-actions .btn:not(.gold)',"Discover projects"],
+        [".hero-foot span:nth-child(2)","A life in progress — 01 / 04"],
+        ['#about h2','Built by life.<br><em>Driven by purpose.</em>'],
+        ['#about .lead',"I’m Sudirman, interested in technology, digital systems, independent ventures, and ideas that can become something useful."],
+        ['#about .small-note',"This website is a personal space to keep my work, document the journey, and open doors to new possibilities."],
+        ['#about .quote','“The past is a lesson. The future is something <span>we can still build.</span>”'],
+        ['#journey h2','Every chapter<br>has a <em>lesson.</em>'],
+        ['#journey .lead',"Life doesn’t always move in a straight line. Every phase leaves experiences that shape the next step."],
+        ['#journey .card:nth-child(1) h3',"Where it began"],['#journey .card:nth-child(1) p',"It began in Aceh. A journey still unfolding, shaped by experience, values, and the desire to move forward."],
+        ['#journey .card:nth-child(2) h3',"Learning by doing"],['#journey .card:nth-child(2) p',"Working hands-on in electrical systems, computers, and networking—learning to solve problems through practical skills and experience."],
+        ['#journey .card:nth-child(3) h3',"Building something"],['#journey .card:nth-child(3) p',"Building Sudirman.Net and learning the realities of business: operations, customers, risk, and independence."],
+        ['#projects h2','Turning ideas into<br><em>real things.</em>'],['#projects .lead',"A few directions I want to develop through technology, creativity, and ongoing experimentation."],
+        ['#projects .card:nth-child(1) p',"A record of my internet networking venture and the lessons learned from building a service of my own."],
+        ['#projects .card:nth-child(2) p',"Exploring a personal AI assistant to help manage knowledge, ideas, plans, and everyday work."],
+        ['#projects .card:nth-child(3) p',"Building a digital hub to document the journey, projects, learning, and plans for the future."],
+        ['#now h2','Creating a better<br><em>next chapter.</em>'],
+        ['#now .now-panel p:nth-of-type(1)',"My focus is to build a new foundation: improve my skills, strengthen my finances, grow assets, and create a more sustainable business."],
+        ['#now .now-panel p:nth-of-type(2)',"The long-term vision is simple: live more independently, stay close to family, keep learning, and have the freedom to choose my own direction."],
+        ['.closing .kicker',"Still becoming"],['.closing h2','The story is not finished.<br><em>It’s being built.</em>'],
+        ['.closing p',"One step, one creation, one day at a time."],['footer .footer-row span:nth-child(2)',"Personal archive · Built with purpose."]
+      ]
+    };
+    const original = new Map();
+    document.querySelectorAll("body *").forEach(el => {
+      if (el.children.length === 0) original.set(el, el.innerHTML);
+    });
+    function setLanguage(lang) {
+      copy[lang].forEach(([selector, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.innerHTML = value;
+      });
+      document.documentElement.lang = lang;
+      document.getElementById("langToggle").innerHTML = lang === "id" ? "<strong>ID</strong> | EN" : "ID | <strong>EN</strong>";
+      try { localStorage.setItem("sudirman-language", lang); } catch (e) {}
+    }
+    document.getElementById("langToggle").addEventListener("click", () => {
+      setLanguage(document.documentElement.lang === "id" ? "en" : "id");
+    });
+    let preferred = "id";
+    try { if (localStorage.getItem("sudirman-language") === "en") preferred = "en"; } catch (e) {}
+    setLanguage(preferred);
   </script>
 </body>
 </html>
