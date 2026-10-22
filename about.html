@@ -46,21 +46,37 @@
     footer{padding:25px 0;color:#7f8996;font-size:.78rem}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     @media(max-width:700px){nav{align-items:flex-start;flex-direction:column;padding:13px 0;gap:12px}.nav-right{width:100%;justify-content:space-between;gap:10px}.nav-links{gap:13px;font-size:.78rem;flex-wrap:wrap}.lang-toggle{position:absolute;top:15px;right:6%}.brand{padding-right:80px}.hero{padding:75px 0 65px}section{padding:55px 0}.two-col,.grid{grid-template-columns:1fr;gap:15px}.quote{margin-top:10px}.card{padding:22px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  
+    .nav-tools{display:flex;align-items:center;gap:12px;margin-left:auto}
+    .menu-toggle{width:42px;height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:1px solid var(--line);border-radius:3px;background:transparent;cursor:pointer}
+    .menu-toggle span{display:block;width:19px;height:2px;background:var(--gold);transition:transform .2s,opacity .2s}
+    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    header nav{position:relative}
+    .nav-links{position:absolute;top:calc(100% - 2px);right:0;display:none;flex-direction:column;gap:0;min-width:220px;padding:8px;background:rgba(16,21,29,.98);border:1px solid var(--line);box-shadow:0 18px 45px rgba(0,0,0,.35)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:11px 14px;border-bottom:1px solid rgba(217,184,120,.09)}
+    .nav-links a:last-child{border-bottom:0}
+    .nav-links a:hover{background:rgba(217,184,120,.07)}
+    @media(max-width:700px){.nav-tools{width:auto;position:absolute;right:0;top:13px}.brand{padding-right:100px}.nav-right{width:100%}}
+    @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
   </style>
 </head>
 <body>
   <div class="topline"></div>
   <header><nav class="wrap">
     <a href="index.html" class="brand">SUDIRMAN<span>.</span></a>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="index.html" data-key="home">Beranda</a>
-        <a href="projects.html" data-key="projectsNav">Proyek</a>
-        <a href="#story" data-key="storyNav">Cerita saya</a>
-        <a href="#experience" data-key="experienceNav">Pengalaman</a>
-        <a href="#vision" data-key="visionNav">Visi</a>
-      </div>
+    <div class="nav-tools">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID | EN</button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-links" id="siteMenu">
+      <a href="index.html" data-key="home">Beranda</a>
+      <a href="projects.html" data-key="projectsNav">Proyek</a>
+      <a href="#story" data-key="storyNav">Cerita saya</a>
+      <a href="#experience" data-key="experienceNav">Pengalaman</a>
+      <a href="#vision" data-key="visionNav">Visi</a>
     </div>
   </nav></header>
   <main>
@@ -111,6 +127,19 @@
   <footer><div class="wrap footer-row"><span>© <span id="year"></span> Sudirman</span><span data-key="footer">Dibangun dengan tujuan, satu langkah pada satu waktu.</span></div></footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    const menuToggle = document.getElementById("menuToggle");
+    const siteMenu = document.getElementById("siteMenu");
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+      siteMenu.classList.toggle("open", !isOpen);
+    });
+    siteMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      siteMenu.classList.remove("open");
+    }));
     const translations = {
       id: {
         home:"Beranda",projectsNav:"Galeri proyek",storyNav:"Cerita saya",experienceNav:"Pengalaman",visionNav:"Visi",kicker:"Sedikit lebih dekat",
