@@ -397,11 +397,12 @@
       <a href="#home" class="brand">SUDIRMAN<span>.</span></a>
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID | EN</button>
       <div class="links">
-        <a href="#about">Tentang</a>
+        <a href="#about" id="homeAboutLink">Tentang</a>
         <a href="about.html" id="aboutPageLink">Tentang saya</a>
-        <a href="#journey">Journey</a>
-        <a href="#projects">Projects</a>
-        <a href="#now">Now</a>
+        <a href="#journey" id="journeyLink">Journey</a>
+        <a href="#projects" id="homeProjectsLink">Projects</a>
+        <a href="projects.html" id="projectGalleryLink">Galeri proyek</a>
+        <a href="#now" id="nowLink">Now</a>
       </div>
     </nav>
   </header>
@@ -585,8 +586,8 @@
     document.getElementById("year").textContent = new Date().getFullYear();
     const copy = {
       id: [
-        ["header .links a:nth-child(1)","Tentang"],["header .links a:nth-child(2)","Perjalanan"],["header .links a:nth-child(3)","Proyek"],["header .links a:nth-child(4)","Saat ini"],
-        ["#aboutPageLink","Tentang saya"],
+        ["#homeAboutLink","Tentang"],["#journeyLink","Perjalanan"],["#homeProjectsLink","Proyek"],["#nowLink","Saat ini"],
+        ["#aboutPageLink","Tentang saya"],["#projectGalleryLink","Galeri proyek"],
         [".hero .kicker","Arsip pribadi · Sejak 1990"],[".hero-copy",'Bukan sekadar tentang siapa saya hari ini, tetapi tentang perjalanan, pelajaran, dan <strong>apa yang sedang saya bangun untuk masa depan.</strong>'],
         ['.hero-actions .btn.gold',"Jelajahi kisah saya ↗"],['.hero-actions .btn:not(.gold)',"Lihat proyek"],
         [".hero-foot span:nth-child(2)","Sebuah perjalanan yang terus berjalan — 01 / 04"],
@@ -610,8 +611,8 @@
         ['.closing p',"Satu langkah, satu karya, satu hari pada satu waktu."],['footer .footer-row span:nth-child(2)',"Arsip pribadi · Dibangun dengan tujuan."]
       ],
       en: [
-        ['header .links a:nth-child(1)',"About"],['header .links a:nth-child(2)',"Journey"],['header .links a:nth-child(3)',"Projects"],['header .links a:nth-child(4)',"Now"],
-        ["#aboutPageLink","About Me"],
+        ['#homeAboutLink',"About"],['#journeyLink',"Journey"],['#homeProjectsLink',"Projects"],['#nowLink',"Now"],
+        ["#aboutPageLink","About Me"],["#projectGalleryLink","Project Gallery"],
         [".hero .kicker","Personal archive · Est. 1990"],[".hero-copy",'More than who I am today, this is about the journey, the lessons, and <strong>what I am building for the future.</strong>'],
         ['.hero-actions .btn.gold',"Explore my story ↗"],['.hero-actions .btn:not(.gold)',"Discover projects"],
         [".hero-foot span:nth-child(2)","A life in progress — 01 / 04"],
