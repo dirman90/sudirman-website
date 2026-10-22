@@ -132,6 +132,56 @@
       letter-spacing: -.06em;
     }
 
+    .hero-layout {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      align-items: center;
+      gap: clamp(30px, 5vw, 72px);
+    }
+
+    .hero-profile {
+      justify-self: end;
+      width: min(100%, 390px);
+      aspect-ratio: 4 / 5;
+      position: relative;
+      padding: 10px;
+      border: 1px solid rgba(217,184,120,.62);
+      background: linear-gradient(145deg, rgba(217,184,120,.12), rgba(217,184,120,.015));
+      box-shadow: 0 25px 70px rgba(0,0,0,.24);
+    }
+
+    .hero-profile::before {
+      content: "";
+      position: absolute;
+      inset: 18px -12px -12px 18px;
+      border: 1px solid rgba(217,184,120,.25);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-profile img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: var(--surface);
+    }
+
+    .hero-profile-caption {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      padding: 7px 11px;
+      color: #f4f0e8;
+      background: rgba(8,11,16,.78);
+      border: 1px solid rgba(217,184,120,.4);
+      font-size: .68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
     .hero-copy {
       max-width: 590px;
       color: var(--muted);
@@ -355,6 +405,8 @@
       .lang-toggle { position:absolute; top:17px; right:6%; }
       nav { padding-right:78px; }
 
+      .hero-layout { grid-template-columns: 1fr; gap: 34px; }
+      .hero-profile { justify-self: start; width: min(78%, 330px); margin: 0 10px 18px 0; aspect-ratio: 4 / 4.6; }
       .hero {
         min-height: 78vh;
         padding: 75px 0 100px;
@@ -498,7 +550,8 @@
   <main>
     <div class="wrap">
       <section class="hero" id="home" style="border-top:0">
-        <div>
+        <div class="hero-layout">
+        <div class="hero-text">
           <div class="kicker">Personal archive · Est. 1990</div>
           <h1>Beyond<br>the <span>ordinary.</span></h1>
           <p class="hero-copy">
@@ -510,6 +563,11 @@
             <a class="btn gold" href="#about">Explore my story ↗</a>
             <a class="btn" href="#projects">Discover projects</a>
           </div>
+        </div>
+        <figure class="hero-profile">
+          <img src="assets/images/1770282670142.png" alt="Foto profil Sudirman" loading="eager" decoding="async">
+          <figcaption class="hero-profile-caption">Sudirman · Personal Archive</figcaption>
+        </figure>
         </div>
 
         <div class="hero-foot">
