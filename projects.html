@@ -176,6 +176,23 @@
   .card:nth-child(1) .card-num::before { content: "\f1b3"; }
   .card:nth-child(2) .card-num::before { content: "\f121"; }
   .card:nth-child(3) .card-num::before { content: "\f0ac"; }
+    .case-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:28px; }
+    .case-card { min-width:0; padding:26px; border:1px solid var(--line); border-radius:5px; background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.006)); }
+    .case-top { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    .case-icon { display:inline-flex; width:42px; height:42px; flex-shrink:0; align-items:center; justify-content:center; border:1px solid var(--line); border-radius:4px; color:var(--gold); }
+    .case-type { color:var(--muted); font-size:.75rem; line-height:1.5; }
+    .case-card h3 { font-size:1.35rem; margin-bottom:10px; }
+    .case-summary { color:var(--white); font-size:.94rem; margin-bottom:22px; }
+    .case-detail { margin-top:17px; }
+    .case-detail h4 { color:var(--gold); font-size:.76rem; letter-spacing:.09em; text-transform:uppercase; margin-bottom:6px; }
+    .case-detail p { color:var(--muted); font-size:.88rem; line-height:1.75; }
+    .case-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:20px; }
+    .case-tags span { border:1px solid var(--line); padding:4px 8px; color:var(--gold-light); font-size:.72rem; border-radius:3px; }
+    .case-note { display:block; color:var(--muted); font-size:.76rem; margin-top:18px; font-style:italic; }
+    .case-link { display:inline-flex; margin-top:20px; color:var(--gold-light); font-size:.85rem; }
+    .case-link:hover { color:var(--white); }
+    @media(max-width:760px) { .case-grid { grid-template-columns:1fr; } .case-card { padding:21px; } }
+
   .contact-action::after { content: "\f08e"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-left: .45em; font-size: .85em; }
   .tag::before { content: "\f02b"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: .5em; }
   .meta::before { content: "\f02d"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold); margin-right: .5em; }
@@ -252,6 +269,31 @@
           </article>
         </div>
       </section>
+      <section id="case-studies">
+        <div class="section-no" data-key="caseLabel">02 / STUDI KASUS</div>
+        <h2 data-key="caseTitle">Pengalaman yang bisa<br><em>ditunjukkan.</em></h2>
+        <p class="lead" data-key="caseLead">Beberapa contoh pengalaman dan pekerjaan nyata. Saya tidak mencantumkan angka atau hasil yang belum dapat diverifikasi.</p>
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-top"><span class="case-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></span><span class="case-type" data-key="case1Type">Pengalaman usaha · 2017–2026</span></div>
+            <h3>Sudirman.Net</h3>
+            <p class="case-summary" data-key="case1Summary">Membangun dan menjalankan layanan internet lokal, dengan pengalaman langsung dalam aspek teknis dan operasional usaha.</p>
+            <div class="case-detail"><h4 data-key="caseChallenge">Ruang lingkup</h4><p data-key="case1Challenge">Menangani kebutuhan jaringan dan konektivitas pelanggan serta menjaga layanan berjalan dalam kondisi operasional sehari-hari.</p></div>
+            <div class="case-detail"><h4 data-key="caseApproach">Pengalaman yang didapat</h4><p data-key="case1Approach">Praktik jaringan internet, router, kabel, dukungan pelanggan, troubleshooting, dan pelajaran tentang pengelolaan usaha mandiri.</p></div>
+            <div class="case-tags"><span>Networking</span><span>Troubleshooting</span><span>Operations</span></div>
+            <span class="case-note" data-key="case1Note">Arsip pengalaman masa lalu; tidak ditampilkan sebagai layanan yang masih aktif.</span>
+          </article>
+          <article class="case-card">
+            <div class="case-top"><span class="case-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span><span class="case-type" data-key="case2Type">Proyek digital · Sedang dikembangkan</span></div>
+            <h3>Sudirman.eu.org</h3>
+            <p class="case-summary" data-key="case2Summary">Membangun rumah digital pribadi untuk mendokumentasikan perjalanan, menampilkan proyek, dan membuka jalur komunikasi profesional.</p>
+            <div class="case-detail"><h4 data-key="caseChallenge">Ruang lingkup</h4><p data-key="case2Challenge">Menyusun situs responsif dengan halaman profil dan proyek, dukungan dua bahasa, pilihan tema, serta kanal kontak langsung.</p></div>
+            <div class="case-detail"><h4 data-key="caseApproach">Yang sedang dibangun</h4><p data-key="case2Approach">HTML, CSS, JavaScript, pengelolaan kode melalui GitHub, dan deployment website melalui Cloudflare Pages.</p></div>
+            <div class="case-tags"><span>HTML/CSS</span><span>JavaScript</span><span>GitHub</span><span>Cloudflare Pages</span></div>
+            <a class="case-link" href="https://sudirman.eu.org/" target="_blank" rel="noopener noreferrer" data-key="case2Link">Kunjungi website ↗</a>
+          </article>
+        </div>
+      </section>
       <section>
         <div class="note">
           <div class="section-no" data-key="nextLabel">02 / LANGKAH BERIKUTNYA</div>
@@ -314,6 +356,9 @@
         p5:"Pengembangan dan pengujian ide usaha makanan, resep sambal, biaya bahan, dan strategi harga berdasarkan kondisi operasional.",
         p6:"Website pribadi bilingual sebagai rumah digital untuk cerita, pengalaman, karya, dan proyek yang akan bertambah seiring waktu.",
         statusArchive:"Arsip pengalaman",statusConcept:"Konsep / eksplorasi",statusConcept2:"Konsep / eksplorasi",statusResearch:"Riset awal",statusExplore:"Eksplorasi",statusActive:"Aktif dikembangkan",
+        caseLabel:"02 / STUDI KASUS",caseTitle:"Pengalaman yang bisa<br><em>ditunjukkan.</em>",caseLead:"Beberapa contoh pengalaman dan pekerjaan nyata. Saya tidak mencantumkan angka atau hasil yang belum dapat diverifikasi.",
+        case1Type:"Pengalaman usaha · 2017–2026",case1Summary:"Membangun dan menjalankan layanan internet lokal, dengan pengalaman langsung dalam aspek teknis dan operasional usaha.",caseChallenge:"Ruang lingkup",case1Challenge:"Menangani kebutuhan jaringan dan konektivitas pelanggan serta menjaga layanan berjalan dalam kondisi operasional sehari-hari.",caseApproach:"Pengalaman yang didapat",case1Approach:"Praktik jaringan internet, router, kabel, dukungan pelanggan, troubleshooting, dan pelajaran tentang pengelolaan usaha mandiri.",case1Note:"Arsip pengalaman masa lalu; tidak ditampilkan sebagai layanan yang masih aktif.",
+        case2Type:"Proyek digital · Sedang dikembangkan",case2Summary:"Membangun rumah digital pribadi untuk mendokumentasikan perjalanan, menampilkan proyek, dan membuka jalur komunikasi profesional.",case2Challenge:"Menyusun situs responsif dengan halaman profil dan proyek, dukungan dua bahasa, pilihan tema, serta kanal kontak langsung.",case2Approach:"HTML, CSS, JavaScript, pengelolaan kode melalui GitHub, dan deployment website melalui Cloudflare Pages.",case2Link:"Kunjungi website ↗",
         nextLabel:"02 / LANGKAH BERIKUTNYA",nextTitle:"Satu proyek pada satu waktu.",nextText:"Galeri ini akan diperbarui saat ada perkembangan nyata. Fokusnya bukan terlihat sibuk, tetapi mencatat proses, menguji ide, dan membangun sesuatu yang benar-benar berguna.",
         footer:"Dibangun dengan tujuan, satu langkah pada satu waktu."
       },
@@ -330,6 +375,9 @@
         p5:"Developing and testing food-business ideas, sambal recipes, ingredient costs, and pricing strategies grounded in operations.",
         p6:"A bilingual personal website as a digital home for stories, experience, work, and projects that will grow over time.",
         statusArchive:"Experience archive",statusConcept:"Concept / exploration",statusConcept2:"Concept / exploration",statusResearch:"Early research",statusExplore:"Exploration",statusActive:"Actively developing",
+        caseLabel:"02 / CASE STUDIES",caseTitle:"Experience you can<br><em>see in practice.</em>",caseLead:"A couple of examples of hands-on experience and current work. No unverified figures or outcomes are claimed.",
+        case1Type:"Business experience · 2017–2026",case1Summary:"Built and operated a local internet service, gaining hands-on experience in both technical work and business operations.",caseChallenge:"Scope",case1Challenge:"Handled networking and customer connectivity needs while keeping the service running through day-to-day operations.",caseApproach:"Experience gained",case1Approach:"Practical internet networking, routers, cabling, customer support, troubleshooting, and lessons in running an independent venture.",case1Note:"Past experience archive; not presented as a currently active service.",
+        case2Type:"Digital project · In development",case2Summary:"Building a personal digital home to document the journey, present projects, and create a professional contact path.",case2Challenge:"Developing a responsive site with profile and project pages, bilingual support, theme options, and direct contact channels.",case2Approach:"HTML, CSS, JavaScript, code management through GitHub, and website deployment through Cloudflare Pages.",case2Link:"Visit website ↗",
         nextLabel:"02 / WHAT’S NEXT",nextTitle:"One project at a time.",nextText:"This gallery will be updated as real progress happens. The goal is not to look busy, but to document the process, test ideas, and build things that are genuinely useful.",
         footer:"Built with purpose, one step at a time."
       }
