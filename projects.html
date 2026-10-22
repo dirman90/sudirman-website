@@ -114,6 +114,33 @@
       header nav .nav-tools > #menuToggle { flex: 0 0 42px; }
     }
 
+      /* Accessible light theme, keeping the gold brand accents */
+    :root[data-theme="light"]{
+      --bg:#f5f3ee;
+      --surface:#ffffff;
+      --gold:#8b672b;
+      --gold-light:#6f501d;
+      --white:#171a20;
+      --muted:#5e6672;
+      --line:rgba(91,70,34,.22);
+    }
+    :root[data-theme="light"] header{background:rgba(245,243,238,.93)}
+    :root[data-theme="light"] .card,
+    :root[data-theme="light"] .contact-card{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(238,234,224,.72))}
+    :root[data-theme="light"] .links{background:rgba(255,255,255,.98);box-shadow:0 18px 45px rgba(30,25,15,.12)}
+    :root[data-theme="light"] .hero::before{background:radial-gradient(ellipse,rgba(174,127,57,.13),transparent 68%)}
+    :root[data-theme="light"] .btn.gold{color:#fff}
+    :root[data-theme="light"] footer{color:#626874}
+    .theme-toggle{width:42px;height:40px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--gold);cursor:pointer;flex-shrink:0}
+    .theme-toggle:hover{border-color:var(--gold);background:rgba(217,184,120,.08)}
+    .theme-toggle svg{width:19px;height:19px;display:block}
+    .theme-toggle:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+
+  
+    :root[data-theme="light"] .nav-links{background:rgba(255,255,255,.98);box-shadow:0 18px 45px rgba(30,25,15,.12)}
+    :root[data-theme="light"] .vision,
+    :root[data-theme="light"] .note{background:radial-gradient(ellipse at 100% 0%,rgba(217,184,120,.13),transparent 55%),var(--surface)}
+
   </style>
 </head>
 <body>
@@ -123,6 +150,9 @@
     <div class="nav-tools">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID | EN</button>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu"><span></span><span></span><span></span></button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode terang" aria-pressed="false" title="Ganti tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+      </button>
     </div>
     <div class="nav-links" id="siteMenu">
       <a href="index.html" data-key="home">Beranda</a>
@@ -193,6 +223,29 @@
   </main>
   <footer><div class="wrap footer-row"><span>© <span id="year"></span> Sudirman</span><span data-key="footer">Dibangun dengan tujuan, satu langkah pada satu waktu.</span></div></footer>
   <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const sunIcon = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>';
+    const moonIcon = '<path d="M20.5 14.1A8.5 8.5 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14.1Z"/>';
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      const isLight = theme === "light";
+      themeIcon.innerHTML = isLight ? moonIcon : sunIcon;
+      themeToggle.setAttribute("aria-pressed", String(isLight));
+      themeToggle.setAttribute("aria-label", isLight ? "Aktifkan mode gelap" : "Aktifkan mode terang");
+      themeToggle.setAttribute("title", isLight ? "Beralih ke mode gelap" : "Beralih ke mode terang");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) themeColor.setAttribute("content", isLight ? "#f5f3ee" : "#080b10");
+      try { localStorage.setItem("sudirman-theme", theme); } catch (e) {}
+    }
+    let savedTheme = "dark";
+    try { if (localStorage.getItem("sudirman-theme") === "light") savedTheme = "light"; } catch (e) {}
+    applyTheme(savedTheme);
+    themeToggle.addEventListener("click", () => {
+      applyTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light");
+    });
+
+
     document.getElementById("year").textContent = new Date().getFullYear();
     const menuToggle = document.getElementById("menuToggle");
     const siteMenu = document.getElementById("siteMenu");
