@@ -92,6 +92,28 @@
       }
     }
 
+  
+    /* Keep ID EN beside hamburger on secondary pages */
+    @media (max-width: 800px) {
+      header nav .nav-tools {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 8px !important;
+      }
+      header nav .nav-tools > #langToggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+        position: static !important;
+        top: auto !important;
+        right: auto !important;
+        margin: 0 !important;
+      }
+      header nav .nav-tools > #menuToggle { flex: 0 0 42px; }
+    }
+
   </style>
 </head>
 <body>
