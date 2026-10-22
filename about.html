@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b10">
+  <meta name="description" content="Kenali Sudirman: perjalanan hidup, pengalaman teknis, dunia usaha, dan visi masa depan.">
+  <title>Tentang Saya — Sudirman</title>
+  <style>
+    :root{--bg:#080b10;--surface:#10151d;--gold:#d9b878;--gold-light:#f2d9a0;--white:#f4f0e8;--muted:#9da5b1;--line:rgba(217,184,120,.19)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{background:var(--bg);color:var(--white);font-family:system-ui,-apple-system,sans-serif;line-height:1.8;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1040px,88%);margin:auto}
+    .topline{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,11,16,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:850;letter-spacing:3px;white-space:nowrap}.brand span,.gold{color:var(--gold)}
+    .nav-right{display:flex;align-items:center;gap:22px}.nav-links{display:flex;gap:20px;color:var(--muted);font-size:.86rem}
+    .nav-links a:hover{color:var(--gold)}
+    .lang-toggle{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 11px;border-radius:3px;font:inherit;font-size:.76rem;cursor:pointer}
+    .lang-toggle:hover{border-color:var(--gold);color:var(--white)}
+    .hero{padding:100px 0 85px;position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+    .hero:after{content:"";position:absolute;width:520px;height:420px;right:-180px;top:-90px;background:radial-gradient(ellipse,rgba(174,127,57,.16),transparent 68%);pointer-events:none}
+    .kicker{color:var(--gold);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+    h1{font-size:clamp(3.2rem,9vw,6.7rem);line-height:1.02;letter-spacing:-.065em;margin:24px 0;position:relative;z-index:1}
+    h1 em,h2 em{font-family:Georgia,serif;color:var(--gold);font-weight:400}
+    .intro{max-width:720px;color:var(--muted);font-size:1.08rem}
+    .intro strong{color:var(--white);font-weight:600}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;padding:11px 17px;border:1px solid var(--line);border-radius:3px;font-size:.87rem}
+    .btn.primary{background:var(--gold);color:#101116;border-color:var(--gold);font-weight:750}
+    section{padding:72px 0;border-bottom:1px solid var(--line)}
+    .section-no{font-size:.72rem;letter-spacing:2px;color:var(--gold);margin-bottom:13px}
+    h2{font-size:clamp(2rem,5vw,3.4rem);line-height:1.16;letter-spacing:-.045em}
+    .lead{color:var(--muted);max-width:720px;margin-top:17px}
+    .two-col{display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:start}
+    .quote{border-left:2px solid var(--gold);padding:8px 0 8px 22px;font:italic clamp(1.25rem,3vw,1.7rem)/1.55 Georgia,serif}
+    .quote span{color:var(--gold)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+    .card{background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));border:1px solid var(--line);padding:24px;min-width:0}
+    .card .num{font-size:.7rem;color:var(--gold);letter-spacing:1.7px;margin-bottom:22px}
+    h3{font-size:1.1rem;margin-bottom:10px}.card p{font-size:.9rem;color:var(--muted)}
+    .vision{background:radial-gradient(ellipse at 100% 0%,rgba(217,184,120,.09),transparent 55%),var(--surface);border:1px solid var(--line);padding:clamp(24px,5vw,45px);margin-top:25px}
+    .vision p{color:var(--muted);margin-top:15px;max-width:760px}
+    footer{padding:25px 0;color:#7f8996;font-size:.78rem}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:700px){nav{align-items:flex-start;flex-direction:column;padding:13px 0;gap:12px}.nav-right{width:100%;justify-content:space-between;gap:10px}.nav-links{gap:13px;font-size:.78rem;flex-wrap:wrap}.lang-toggle{position:absolute;top:15px;right:6%}.brand{padding-right:80px}.hero{padding:75px 0 65px}section{padding:55px 0}.two-col,.grid{grid-template-columns:1fr;gap:15px}.quote{margin-top:10px}.card{padding:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header><nav class="wrap">
+    <a href="index.html" class="brand">SUDIRMAN<span>.</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" data-key="home">Beranda</a>
+        <a href="#story" data-key="storyNav">Cerita saya</a>
+        <a href="#experience" data-key="experienceNav">Pengalaman</a>
+        <a href="#vision" data-key="visionNav">Visi</a>
+      </div>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID | EN</button>
+    </div>
+  </nav></header>
+  <main>
+    <div class="hero"><div class="wrap">
+      <div class="kicker" data-key="kicker">Sedikit lebih dekat</div>
+      <h1 data-key="heroTitle">Tentang <em>Saya.</em></h1>
+      <p class="intro" data-key="intro">Saya Sudirman. Saya menyukai teknologi, memecahkan masalah, dan membangun sesuatu dari ide menjadi kenyataan. Halaman ini menceritakan perjalanan saya—bukan sebagai kisah yang sudah selesai, melainkan proses yang masih terus berjalan.</p>
+      <div class="actions"><a class="btn primary" href="#story" data-key="readStory">Kenali perjalanan saya ↓</a><a class="btn" href="index.html" data-key="backHome">Kembali ke beranda ↗</a></div>
+    </div></div>
+    <div class="wrap">
+      <section id="story">
+        <div class="section-no">01 / <span data-key="storyLabel">PERJALANAN</span></div>
+        <div class="two-col">
+          <div><h2 data-key="storyTitle">Tumbuh lewat <em>pengalaman.</em></h2>
+          <p class="lead" data-key="storyP1">Saya berasal dari Aceh, Indonesia. Dalam perjalanan hidup, saya belajar bahwa kemampuan tidak hanya dibangun dari teori, tetapi juga dari mencoba, memperbaiki kesalahan, dan berani memulai lagi.</p>
+          <p class="lead" data-key="storyP2">Saya menghargai hal-hal yang nyata: pekerjaan yang selesai dengan baik, solusi yang benar-benar membantu, dan usaha yang dibangun dengan kesabaran. Bagi saya, setiap fase punya pelajaran yang bisa dibawa ke langkah berikutnya.</p></div>
+          <div class="quote" data-key="quote">“Tidak harus langsung sempurna. Yang penting terus belajar, <span>memperbaiki arah, dan melangkah.</span>”</div>
+        </div>
+      </section>
+      <section id="experience">
+        <div class="section-no">02 / <span data-key="experienceLabel">PENGALAMAN</span></div>
+        <h2 data-key="experienceTitle">Belajar dengan <em>mengerjakan.</em></h2>
+        <p class="lead" data-key="experienceLead">Pengalaman saya banyak bersentuhan dengan teknologi praktis dan usaha mandiri. Dari sana saya belajar memahami masalah dari dekat, bukan sekadar dari teori.</p>
+        <div class="grid">
+          <article class="card"><div class="num">01 / TECHNICAL</div><h3 data-key="techTitle">Teknis & pemecahan masalah</h3><p data-key="techText">Pengalaman di bidang kelistrikan, komputer, dan jaringan membentuk kebiasaan untuk mencari akar masalah, bekerja sistematis, dan mengutamakan solusi yang bisa digunakan.</p></article>
+          <article class="card"><div class="num">02 / BUSINESS</div><h3 data-key="businessTitle">Membangun usaha</h3><p data-key="businessText">Melalui Sudirman.Net, saya belajar tentang layanan pelanggan, operasional, biaya, risiko, dan tanggung jawab dalam menjalankan usaha sendiri.</p></article>
+          <article class="card"><div class="num">03 / DIGITAL</div><h3 data-key="digitalTitle">Teknologi & ide baru</h3><p data-key="digitalText">Saya terus mengeksplorasi sistem digital, otomasi, dan AI untuk menemukan cara kerja yang lebih sederhana, bermanfaat, dan efisien.</p></article>
+        </div>
+      </section>
+      <section>
+        <div class="section-no">03 / <span data-key="valuesLabel">PRINSIP</span></div>
+        <h2 data-key="valuesTitle">Hal yang ingin <em>saya pegang.</em></h2>
+        <div class="grid">
+          <article class="card"><div class="num">01</div><h3 data-key="value1Title">Terus belajar</h3><p data-key="value1Text">Tetap terbuka pada pengetahuan baru dan bersedia memperbaiki cara lama ketika ada cara yang lebih baik.</p></article>
+          <article class="card"><div class="num">02</div><h3 data-key="value2Title">Berguna dalam tindakan</h3><p data-key="value2Text">Ide punya nilai ketika diwujudkan menjadi sesuatu yang membantu orang atau menyelesaikan masalah nyata.</p></article>
+          <article class="card"><div class="num">03</div><h3 data-key="value3Title">Maju dengan tujuan</h3><p data-key="value3Text">Membangun masa depan secara bertahap, menjaga kemandirian, dan memberi ruang bagi hal-hal yang benar-benar penting.</p></article>
+        </div>
+      </section>
+      <section id="vision">
+        <div class="section-no">04 / <span data-key="visionLabel">LANGKAH BERIKUTNYA</span></div>
+        <div class="vision"><h2 data-key="visionTitle">Membangun babak <em>berikutnya.</em></h2>
+          <p data-key="visionP1">Saat ini saya berfokus mengembangkan kemampuan, mengeksplorasi proyek digital dan AI, serta membangun fondasi untuk usaha yang lebih berkelanjutan.</p>
+          <p data-key="visionP2">Dalam jangka panjang, saya ingin menjalani hidup yang lebih mandiri, tetap dekat dengan keluarga, terus berkarya, dan memiliki kebebasan untuk memilih jalan hidup dengan lebih bijak.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Sudirman</span><span data-key="footer">Dibangun dengan tujuan, satu langkah pada satu waktu.</span></div></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const translations = {
+      id: {
+        home:"Beranda",storyNav:"Cerita saya",experienceNav:"Pengalaman",visionNav:"Visi",kicker:"Sedikit lebih dekat",
+        heroTitle:"Tentang <em>Saya.</em>",intro:"Saya Sudirman. Saya menyukai teknologi, memecahkan masalah, dan membangun sesuatu dari ide menjadi kenyataan. Halaman ini menceritakan perjalanan saya—bukan sebagai kisah yang sudah selesai, melainkan proses yang masih terus berjalan.",
+        readStory:"Kenali perjalanan saya ↓",backHome:"Kembali ke beranda ↗",storyLabel:"PERJALANAN",storyTitle:"Tumbuh lewat <em>pengalaman.</em>",
+        storyP1:"Saya berasal dari Aceh, Indonesia. Dalam perjalanan hidup, saya belajar bahwa kemampuan tidak hanya dibangun dari teori, tetapi juga dari mencoba, memperbaiki kesalahan, dan berani memulai lagi.",
+        storyP2:"Saya menghargai hal-hal yang nyata: pekerjaan yang selesai dengan baik, solusi yang benar-benar membantu, dan usaha yang dibangun dengan kesabaran. Bagi saya, setiap fase punya pelajaran yang bisa dibawa ke langkah berikutnya.",
+        quote:"“Tidak harus langsung sempurna. Yang penting terus belajar, <span>memperbaiki arah, dan melangkah.</span>”",experienceLabel:"PENGALAMAN",experienceTitle:"Belajar dengan <em>mengerjakan.</em>",
+        experienceLead:"Pengalaman saya banyak bersentuhan dengan teknologi praktis dan usaha mandiri. Dari sana saya belajar memahami masalah dari dekat, bukan sekadar dari teori.",
+        techTitle:"Teknis & pemecahan masalah",techText:"Pengalaman di bidang kelistrikan, komputer, dan jaringan membentuk kebiasaan untuk mencari akar masalah, bekerja sistematis, dan mengutamakan solusi yang bisa digunakan.",
+        businessTitle:"Membangun usaha",businessText:"Melalui Sudirman.Net, saya belajar tentang layanan pelanggan, operasional, biaya, risiko, dan tanggung jawab dalam menjalankan usaha sendiri.",
+        digitalTitle:"Teknologi & ide baru",digitalText:"Saya terus mengeksplorasi sistem digital, otomasi, dan AI untuk menemukan cara kerja yang lebih sederhana, bermanfaat, dan efisien.",
+        valuesLabel:"PRINSIP",valuesTitle:"Hal yang ingin <em>saya pegang.</em>",value1Title:"Terus belajar",value1Text:"Tetap terbuka pada pengetahuan baru dan bersedia memperbaiki cara lama ketika ada cara yang lebih baik.",
+        value2Title:"Berguna dalam tindakan",value2Text:"Ide punya nilai ketika diwujudkan menjadi sesuatu yang membantu orang atau menyelesaikan masalah nyata.",
+        value3Title:"Maju dengan tujuan",value3Text:"Membangun masa depan secara bertahap, menjaga kemandirian, dan memberi ruang bagi hal-hal yang benar-benar penting.",
+        visionLabel:"LANGKAH BERIKUTNYA",visionTitle:"Membangun babak <em>berikutnya.</em>",visionP1:"Saat ini saya berfokus mengembangkan kemampuan, mengeksplorasi proyek digital dan AI, serta membangun fondasi untuk usaha yang lebih berkelanjutan.",
+        visionP2:"Dalam jangka panjang, saya ingin menjalani hidup yang lebih mandiri, tetap dekat dengan keluarga, terus berkarya, dan memiliki kebebasan untuk memilih jalan hidup dengan lebih bijak.",
+        footer:"Dibangun dengan tujuan, satu langkah pada satu waktu."
+      },
+      en: {
+        home:"Home",storyNav:"My story",experienceNav:"Experience",visionNav:"Vision",kicker:"A little closer",
+        heroTitle:"About <em>Me.</em>",intro:"I’m Sudirman. I enjoy technology, solving problems, and turning ideas into something real. This page shares my journey—not as a finished story, but as a process that is still unfolding.",
+        readStory:"Explore my journey ↓",backHome:"Back to home ↗",storyLabel:"THE JOURNEY",storyTitle:"Growing through <em>experience.</em>",
+        storyP1:"I’m from Aceh, Indonesia. Along the way, I’ve learned that ability is built not only through theory, but also by trying, correcting mistakes, and having the courage to begin again.",
+        storyP2:"I value practical things: work done well, solutions that genuinely help, and ventures built with patience. Every phase has lessons that can guide the next step.",
+        quote:"“It doesn’t have to be perfect at first. Keep learning, <span>adjusting the course, and moving forward.</span>”",experienceLabel:"EXPERIENCE",experienceTitle:"Learning by <em>doing.</em>",
+        experienceLead:"Much of my experience sits at the intersection of practical technology and independent business. It has taught me to understand problems firsthand, not just in theory.",
+        techTitle:"Technical work & problem-solving",techText:"Experience with electrical systems, computers, and networking taught me to look for root causes, work systematically, and focus on solutions that work in practice.",
+        businessTitle:"Building a business",businessText:"Through Sudirman.Net, I learned about customer service, operations, costs, risk, and the responsibility that comes with running a business of my own.",
+        digitalTitle:"Technology & new ideas",digitalText:"I continue to explore digital systems, automation, and AI to find ways of working that are simpler, useful, and more efficient.",
+        valuesLabel:"PRINCIPLES",valuesTitle:"What I want to <em>stand by.</em>",value1Title:"Keep learning",value1Text:"Stay open to new knowledge and be willing to improve old methods when a better way becomes available.",
+        value2Title:"Make ideas useful",value2Text:"Ideas matter when they become something that helps people or solves a real problem.",
+        value3Title:"Move with purpose",value3Text:"Build the future step by step, preserve independence, and make room for what truly matters.",
+        visionLabel:"WHAT’S NEXT",visionTitle:"Building the <em>next chapter.</em>",visionP1:"Right now, I’m focused on developing my skills, exploring digital and AI projects, and laying the groundwork for a more sustainable business.",
+        visionP2:"In the long run, I want to live more independently, stay close to family, keep creating, and have the freedom to choose my path more wisely.",
+        footer:"Built with purpose, one step at a time."
+      }
+    };
+    function setLanguage(lang) {
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const value = translations[lang][el.dataset.key];
+        if (value) el.innerHTML = value;
+      });
+      document.documentElement.lang = lang;
+      document.getElementById("langToggle").innerHTML = lang === "id" ? "<strong>ID</strong> | EN" : "ID | <strong>EN</strong>";
+      try { localStorage.setItem("sudirman-language", lang); } catch(e) {}
+    }
+    document.getElementById("langToggle").addEventListener("click", () => {
+      setLanguage(document.documentElement.lang === "id" ? "en" : "id");
+    });
+    let initialLanguage = "id";
+    try { if (localStorage.getItem("sudirman-language") === "en") initialLanguage = "en"; } catch(e) {}
+    setLanguage(initialLanguage);
+  </script>
+</body>
+</html>
