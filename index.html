@@ -427,6 +427,18 @@
       }
     }
 
+
+    /* Professional contact section */
+    .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .contact-card{display:flex;flex-direction:column;gap:8px;min-height:155px;padding:23px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));transition:border-color .2s,transform .2s}
+    .contact-card:hover{border-color:rgba(217,184,120,.6);transform:translateY(-3px)}
+    .contact-label{color:var(--gold);font-size:.72rem;letter-spacing:1.8px;text-transform:uppercase}
+    .contact-value{font-size:.94rem;overflow-wrap:anywhere}
+    .contact-action{margin-top:auto;padding-top:10px;color:var(--gold);font-size:.82rem}
+    .contact-note{color:var(--muted);font-size:.88rem;margin-top:22px}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+    @media(max-width:760px){.contact-grid{grid-template-columns:1fr}.contact-card{min-height:125px}}
+
   </style>
 </head>
 
@@ -447,6 +459,7 @@
         <a href="#projects" id="homeProjectsLink">Projects</a>
         <a href="projects.html" id="projectGalleryLink">Galeri proyek</a>
         <a href="#now" id="nowLink">Now</a>
+        <a href="#contact" id="contactNavLink">Kontak</a>
       </div>
     </nav>
   </header>
@@ -611,6 +624,35 @@
         </div>
       </section>
 
+
+      <section class="content-section" id="contact">
+        <div class="section-top">
+          <div>
+            <div class="index">05 / CONTACT</div>
+            <h2 id="contactHeading">Let’s build<br><em>something meaningful.</em></h2>
+            <p class="lead" id="contactLead">Untuk kolaborasi, peluang kerja, proyek teknologi, atau sekadar bertukar ide, silakan hubungi saya melalui kanal berikut.</p>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="https://wa.me/6282276663818" target="_blank" rel="noopener noreferrer" aria-label="Chat with Sudirman on WhatsApp">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+62 822-7666-3818</span>
+            <span class="contact-action" id="contactWhatsAppAction">Mulai percakapan ↗</span>
+          </a>
+          <a class="contact-card" href="mailto:publik.sudirman@gmail.com" aria-label="Email Sudirman">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">publik.sudirman@gmail.com</span>
+            <span class="contact-action" id="contactEmailAction">Kirim email ↗</span>
+          </a>
+          <a class="contact-card" href="https://github.com/dirman90" target="_blank" rel="noopener noreferrer" aria-label="Visit Sudirman's GitHub profile">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/dirman90</span>
+            <span class="contact-action" id="contactGitHubAction">Lihat proyek dan kode ↗</span>
+          </a>
+        </div>
+        <p class="contact-note" id="contactNote">Media sosial lainnya akan ditambahkan setelah tautan akun dikonfirmasi.</p>
+      </section>
+
       <section class="closing">
         <div class="kicker" style="justify-content:center">Still becoming</div>
         <h2>The story is not finished.<br><em>It's being built.</em></h2>
@@ -644,7 +686,7 @@
     const copy = {
       id: [
         ["#homeAboutLink","Tentang"],["#journeyLink","Perjalanan"],["#homeProjectsLink","Proyek"],["#nowLink","Saat ini"],
-        ["#aboutPageLink","Tentang saya"],["#projectGalleryLink","Galeri proyek"],
+        ["#aboutPageLink","Tentang saya"],["#projectGalleryLink","Galeri proyek"],["#contactNavLink","Kontak"],
         [".hero .kicker","Arsip pribadi · Sejak 1990"],[".hero-copy",'Bukan sekadar tentang siapa saya hari ini, tetapi tentang perjalanan, pelajaran, dan <strong>apa yang sedang saya bangun untuk masa depan.</strong>'],
         ['.hero-actions .btn.gold',"Jelajahi kisah saya ↗"],['.hero-actions .btn:not(.gold)',"Lihat proyek"],
         [".hero-foot span:nth-child(2)","Sebuah perjalanan yang terus berjalan — 01 / 04"],
@@ -665,11 +707,11 @@
         ['#now .now-panel p:nth-of-type(1)',"Fokus saya adalah membangun fondasi baru: meningkatkan kemampuan, memperkuat kondisi finansial, mengembangkan aset, dan menciptakan usaha yang lebih berkelanjutan."],
         ['#now .now-panel p:nth-of-type(2)',"Visi jangka panjangnya sederhana: hidup lebih mandiri, dekat dengan keluarga, terus belajar, dan memiliki kebebasan untuk memilih arah hidup."],
         ['.closing .kicker',"Terus bertumbuh"],['.closing h2','Kisah ini belum selesai.<br><em>Kisah ini sedang dibangun.</em>'],
-        ['.closing p',"Satu langkah, satu karya, satu hari pada satu waktu."],['footer .footer-row span:nth-child(2)',"Arsip pribadi · Dibangun dengan tujuan."]
+        ['.closing p',"Satu langkah, satu karya, satu hari pada satu waktu."],['#contactHeading','Mari membangun<br><em>sesuatu yang berarti.</em>'],['#contactLead',"Untuk kolaborasi, peluang kerja, proyek teknologi, atau sekadar bertukar ide, silakan hubungi saya melalui kanal berikut."],['#contactWhatsAppAction',"Mulai percakapan ↗"],['#contactEmailAction',"Kirim email ↗"],['#contactGitHubAction',"Lihat proyek dan kode ↗"],['#contactNote',"Media sosial lainnya akan ditambahkan setelah tautan akun dikonfirmasi."],['footer .footer-row span:nth-child(2)',"Arsip pribadi · Dibangun dengan tujuan."]
       ],
       en: [
         ['#homeAboutLink',"About"],['#journeyLink',"Journey"],['#homeProjectsLink',"Projects"],['#nowLink',"Now"],
-        ["#aboutPageLink","About Me"],["#projectGalleryLink","Project Gallery"],
+        ["#aboutPageLink","About Me"],["#projectGalleryLink","Project Gallery"],["#contactNavLink","Contact"],
         [".hero .kicker","Personal archive · Est. 1990"],[".hero-copy",'More than who I am today, this is about the journey, the lessons, and <strong>what I am building for the future.</strong>'],
         ['.hero-actions .btn.gold',"Explore my story ↗"],['.hero-actions .btn:not(.gold)',"Discover projects"],
         [".hero-foot span:nth-child(2)","A life in progress — 01 / 04"],
@@ -690,7 +732,7 @@
         ['#now .now-panel p:nth-of-type(1)',"My focus is to build a new foundation: improve my skills, strengthen my finances, grow assets, and create a more sustainable business."],
         ['#now .now-panel p:nth-of-type(2)',"The long-term vision is simple: live more independently, stay close to family, keep learning, and have the freedom to choose my own direction."],
         ['.closing .kicker',"Still becoming"],['.closing h2','The story is not finished.<br><em>It’s being built.</em>'],
-        ['.closing p',"One step, one creation, one day at a time."],['footer .footer-row span:nth-child(2)',"Personal archive · Built with purpose."]
+        ['.closing p',"One step, one creation, one day at a time."],['#contactHeading','Let’s build<br><em>something meaningful.</em>'],['#contactLead',"For collaborations, work opportunities, technology projects, or simply exchanging ideas, feel free to reach out through the channels below."],['#contactWhatsAppAction',"Start a conversation ↗"],['#contactEmailAction',"Send an email ↗"],['#contactGitHubAction',"Explore projects and code ↗"],['#contactNote',"More social links will be added once the account URLs are confirmed."],['footer .footer-row span:nth-child(2)',"Personal archive · Built with purpose."]
       ]
     };
     const original = new Map();
