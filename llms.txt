@@ -1,17 +1,26 @@
 # Sudirman — Beyond the Ordinary
 
+> Official personal website of Sudirman, an Indonesian independent builder documenting practical work and ongoing exploration in technology, AI, digital systems, automation, and independent business ideas.
+
 Canonical website: https://sudirman.eu.org/
 
-## About
-Sudirman is an Indonesian independent builder interested in technology, digital systems, automation, self-directed business, and practical ideas that can become useful projects.
+## Main pages
+- Homepage: https://sudirman.eu.org/
+- About Sudirman: https://sudirman.eu.org/about.html
+- Projects and case studies: https://sudirman.eu.org/projects.html
+- AI and digital systems: https://sudirman.eu.org/ai.html
+- Ideas, technology, and independent systems: https://sudirman.eu.org/ideas.html
 
 ## Topics
-- Artificial intelligence and personal AI systems
-- Digital systems and automation
-- Web development and technology
-- Independent projects and experiments
-- Practical business ideas
-- Personal notes and long-term projects
+- Personal AI assistants and AI companion concepts
+- AI evaluation and decision support
+- Web development and digital identity
+- Computer networking, IT, and practical technical support
+- Workflow automation and digital systems
+- Independent business models and practical experiments
 
-## Website
-The homepage is the primary source for current information about Sudirman and his projects.
+## Context and accuracy
+This site documents the owner's interests, experience, projects, and explorations. Ideas and experiments should not be treated as completed products unless a page explicitly says they are complete. Verify time-sensitive details with the relevant page.
+
+## Crawling
+The XML sitemap is available at https://sudirman.eu.org/sitemap.xml.
